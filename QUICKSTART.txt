@@ -1,0 +1,24 @@
+Inevitable Connections 0.2.2
+
+Install in Google Chrome
+1. Unzip inevitable-linkedin.zip and keep the extracted folder.
+2. Open chrome://extensions and enable Developer mode.
+3. Click Load unpacked and select inevitable-linkedin, the folder containing manifest.json.
+4. Open Inevitable Connections from the Extensions menu.
+
+First test: collection and preview
+1. Sign into your own LinkedIn account in this Chrome profile.
+2. Click Collect from LinkedIn. Keep the connections tab open while it scrolls.
+3. When it stops, compare the collected count with LinkedIn. Unverified means completeness is not proven, not that every row is invalid.
+4. Export connections CSV and Export summary. These work without a CRM key.
+5. To test the CRM preview, open CRM settings and use your own API key from https://crm.inevitable.tech under Settings > API & Webhooks. Keep the Existing Railway API endpoint selected initially. Do not share your key in Slack.
+6. Click Load team and select yourself to save connection ownership, or keep Contacts only. Click Prepare preview and inspect the new, existing and review counts.
+7. Import to CRM writes to the live workspace. Check the preview before clicking it. Existing people are reused without changing their fields. Rows with conflicting identities are excluded. Matching is by profile URL or email; aliases or existing records with missing identifiers can still need manual review.
+
+Please try collection and preview first. Report the captured versus expected counts, duplicate matching behavior, any error text, and Chrome version. Do not include API keys or the full contact export in feedback.
+
+Profile details
+The browser collects names, headlines, profile URLs and displayed connection dates. It does not visit individual profiles. Company and work history enrichment requires a separate workflow; it is not automatic in this extension. An optional Python Lima script is included; it requires your own Lima key and explicit execution. The extension can only link a new contact to an existing company when the CSV has a company name with one exact normalized match.
+
+Recovery
+If an import pauses, use Resume after fixing the error. Saved record IDs are checked before retrying. If Chrome restarts, reconnect your CRM key before resuming. Clear local import data removes this extension's local data, not CRM records.

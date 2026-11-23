@@ -1,0 +1,14 @@
+{
+  "name": "inevitable-linkedin",
+  "private": true,
+  "version": "0.2.2",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.mjs",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
+}
